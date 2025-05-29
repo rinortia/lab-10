@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36121.58 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doodle_Jump", "Doodle_Jump\Doodle_Jump.csproj", "{A20C8E57-15D7-4FC0-ABF6-41ADD41F7CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{B32E2182-4287-4A91-8B59-15423A8D978C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A20C8E57-15D7-4FC0-ABF6-41ADD41F7CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A20C8E57-15D7-4FC0-ABF6-41ADD41F7CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A20C8E57-15D7-4FC0-ABF6-41ADD41F7CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A20C8E57-15D7-4FC0-ABF6-41ADD41F7CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B32E2182-4287-4A91-8B59-15423A8D978C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B32E2182-4287-4A91-8B59-15423A8D978C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B32E2182-4287-4A91-8B59-15423A8D978C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B32E2182-4287-4A91-8B59-15423A8D978C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {127E2BF9-2709-49C1-A2EA-6DD62F314C0A}
+	EndGlobalSection
+EndGlobal
