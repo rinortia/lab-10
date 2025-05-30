@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Model.Core
+{
+    public class GameLogic
+    {
+        private readonly Random rnd = new Random();
+        private const float MinPlatformSpacing = 40f;
+        private const float MaxPlatformSpacing = 100f;
+        private const int MinVisiblePlatforms = 13;
+        private const float MaxJumpHeight = 230f;
+
+        public List<IPlatform> GenerateInitialPlatforms(int screenWidth, int screenHeight)
+        {
+            var platforms = new List<IPlatform>();
+            float startY = screenHeight - 20;
+            platforms.Add(new NormalPlatform(150, startY));
+
+            float currentY = startY;
+            for (int i = 0; i < MinVisiblePlatforms; i++)
+            {
+                float x = rnd.Next(50, screenWidth - 100);
+                float spacing = GetValidSpacing();
+                currentY -= spacing;
+                platforms.Add(new NormalPlatform(x, currentY));
+            }
+            return platforms;
+        }
+
+        private float GetValidSpacing()
+        {
+            float spacing;
+            do
+            {
+                spacing = (float)(rnd.NextDouble() * (MaxPlatformSpacing - MinPlatformSpacing) + MinPlatformSpacing);
+            } while (spacing > MaxJumpHeight);
+            return spacing;
+        }
+
+        public bool CheckLanding(Player player, IPlatform platform)
+        {
+            RectangleF playerBounds = player.GetBounds();
+            RectangleF platformBounds = new RectangleF(platform.Position, platform.Size);
+
+            // Проверяем, что игрок падает вниз (velocityY > 0)
+            // и находится в пределах платформы по горизонтали
+            bool isFallingDown = player.VelocityY > 0;
+            bool isAbovePlatform = playerBounds.Bottom >= platformBounds.Top &&
+                                 playerBounds.Bottom <= platformBounds.Top + player.VelocityY + 5;
+            bool isHorizontallyAligned = playerBounds.Right > platformBounds.Left &&
+                                        playerBounds.Left < platformBounds.Right;
+
+            if (isFallingDown && isAbovePlatform && isHorizontallyAligned)
+            {
+                // Игрок приземлился на платформу
+                player.IsOnGround = true;
+                player.VelocityY = 0;
+                player.Position = new PointF(player.Position.X, platformBounds.Top - Player.Height);
+                return true;
+            }
+
+            // Игрок не приземлился на платформу
+            return false;
+        }
+    }
+}
