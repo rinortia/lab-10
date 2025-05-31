@@ -26,11 +26,13 @@ namespace Doodle_Jump
         private readonly float maxJumpHeight = 230f;
         private readonly bool loadSavedGame;
         private bool isGameOver = false;
+        private readonly string saveFormat;
 
-        public GameForm(bool loadSavedGame = false)
+        public GameForm(bool loadSavedGame, string saveFormat = "JSON")
         {
             InitializeComponent();
             this.loadSavedGame = loadSavedGame;
+            this.saveFormat = saveFormat; // Сохраняем выбранный формат
 
             game_timer = new Timer();
             game_timer.Interval = 16;
@@ -102,20 +104,12 @@ namespace Doodle_Jump
                 }).ToList()
             };
 
-            SaveManager.Save(state);
-            Console.WriteLine($"Игра сохранена в: {SaveManager.SavePath}");
-        }
-
-        private PlatformType GetPlatformType(IPlatform platform)
-        {
-            if (platform is BreakablePlatform) return PlatformType.Breakable;
-            if (platform is HighJumpPlatform) return PlatformType.HighJump;
-            return PlatformType.Normal;
+            SaveManager.Save(state, saveFormat); // Передаем формат
         }
 
         private void LoadGame()
         {
-            var state = SaveManager.Load();
+            var state = SaveManager.Load(saveFormat); // Используем выбранный формат
             if (state == null)
             {
                 StartNewGame();
@@ -134,6 +128,14 @@ namespace Doodle_Jump
 
             game_timer.Start();
         }
+
+        private PlatformType GetPlatformType(IPlatform platform)
+        {
+            if (platform is BreakablePlatform) return PlatformType.Breakable;
+            if (platform is HighJumpPlatform) return PlatformType.HighJump;
+            return PlatformType.Normal;
+        }
+              
 
         private IPlatform CreatePlatform(PlatformData data)
         {
