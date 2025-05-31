@@ -9,12 +9,16 @@ namespace Model.Core
         public PointF Position { get; set; }
         public bool IsOnGround { get; set; }
         public float VelocityY { get; set; }
+        public float VelocityX { get; set; } // Новая переменная для горизонтальной скорости
 
         public const float Gravity = 0.5f;
         private const float MaxFallSpeed = 12f;
         private const float MoveSpeed = 5f;
+        private const float AirResistance = 0.8f; // Сопротивление воздуха в прыжке
+        private const float GroundFriction = 0.9f; // Трение о землю
+        private const float Acceleration = 0.8f; // Ускорение при движении
 
-        public const float InitialJumpForce = 14f; // Публичная для других классов
+        public const float InitialJumpForce = 14f;
         public const int Width = 70;
         public const int Height = 70;
 
@@ -29,6 +33,7 @@ namespace Model.Core
         {
             Position = new PointF(x, y);
             VelocityY = 0;
+            VelocityX = 0;
         }
 
         private static void LoadImage()
@@ -54,21 +59,36 @@ namespace Model.Core
 
         public void Update()
         {
+            // Вертикальное движение с улучшенной физикой
             if (!IsOnGround)
+            {
                 VelocityY += Gravity;
+
+                // Дополнительное ускорение при падении
+                if (VelocityY > 0)
+                    VelocityY *= 1.05f;
+            }
+            else
+            {
+                // Трение о землю
+                VelocityX *= GroundFriction;
+            }
 
             // Ограничиваем скорость падения
             if (VelocityY > MaxFallSpeed)
                 VelocityY = MaxFallSpeed;
 
             // Обновляем позицию
-            Position = new PointF(Position.X, Position.Y + VelocityY);
+            Position = new PointF(Position.X + VelocityX, Position.Y + VelocityY);
         }
 
         public void ApplyJumpForce(float force)
         {
             VelocityY = -force;
             IsOnGround = false;
+
+            // Сопротивление воздуха при прыжке
+            VelocityX *= AirResistance;
         }
 
         public void Jump()
@@ -79,12 +99,24 @@ namespace Model.Core
 
         public void MoveLeft()
         {
-            Position = new PointF(Position.X - MoveSpeed, Position.Y);
+            if (IsOnGround)
+                VelocityX = -MoveSpeed;
+            else
+                VelocityX = -MoveSpeed * 0.7f; // Меньший контроль в воздухе
+
+            // Плавное ускорение
+            VelocityX = Math.Max(VelocityX - Acceleration, -MoveSpeed * 1.5f);
         }
 
         public void MoveRight()
         {
-            Position = new PointF(Position.X + MoveSpeed, Position.Y);
+            if (IsOnGround)
+                VelocityX = MoveSpeed;
+            else
+                VelocityX = MoveSpeed * 0.7f; // Меньший контроль в воздухе
+
+            // Плавное ускорение
+            VelocityX = Math.Min(VelocityX + Acceleration, MoveSpeed * 1.5f);
         }
 
         public void Draw(Graphics g)
@@ -92,7 +124,7 @@ namespace Model.Core
             if (playerImage != null)
                 g.DrawImage(playerImage, Position.X, Position.Y, Width, Height);
             else
-                g.FillEllipse(Brushes.Green, Position.X, Position.Y, Width, Height); // запасной вариант
+                g.FillEllipse(Brushes.Green, Position.X, Position.Y, Width, Height);
         }
 
         public RectangleF GetBounds()
@@ -106,10 +138,10 @@ namespace Model.Core
             RectangleF platformBounds = new RectangleF(platform.Position, platform.Size);
 
             bool vertical = playerBounds.Bottom >= platformBounds.Top &&
-                            playerBounds.Bottom <= platformBounds.Top + 10;
+                          playerBounds.Bottom <= platformBounds.Top + 10;
 
             bool horizontal = playerBounds.Right > platformBounds.Left &&
-                              playerBounds.Left < platformBounds.Right;
+                            playerBounds.Left < platformBounds.Right;
 
             if (vertical && horizontal)
             {
