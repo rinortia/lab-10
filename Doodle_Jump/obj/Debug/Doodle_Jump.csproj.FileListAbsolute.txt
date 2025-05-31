@@ -16,3 +16,39 @@ C:\МАРИНА\Doodle_Jump\Doodle_Jump\obj\Debug\Doodle_Jump.MainMenuForm.resou
 C:\МАРИНА\Doodle_Jump\Doodle_Jump\bin\Debug\Newtonsoft.Json.dll
 C:\МАРИНА\Doodle_Jump\Doodle_Jump\bin\Debug\Newtonsoft.Json.xml
 C:\МАРИНА\Doodle_Jump\Doodle_Jump\obj\Debug\Doodle_Jump.exe.config
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Resources\kitten.png
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Doodle_Jump.exe.config
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Doodle_Jump.exe
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Doodle_Jump.pdb
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Model.dll
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Model.pdb
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.AssemblyReference.cache
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.GameForm.resources
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.MainMenuForm.resources
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.Properties.Resources.resources
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.GenerateResource.cache
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.CoreCompileInputs.cache
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_J.0A7096BA.Up2Date
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.exe
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Doodle_Jump\obj\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.GameForm.resources
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.MainMenuForm.resources
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.Properties.Resources.resources
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.GenerateResource.cache
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Resources\kitten.png
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Doodle_Jump.exe.config
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Doodle_Jump.exe
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Model.dll
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Model.pdb
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_J.0A7096BA.Up2Date
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.exe
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\ээа\Doodle_Jump\bin\Debug\Resources\background.png
+C:\Users\admin\Downloads\ээа\Doodle_Jump\obj\Debug\Doodle_Jump.exe.config

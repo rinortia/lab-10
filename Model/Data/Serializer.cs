@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Model.Data
+{
+    public abstract class Serializer : ISerializer
+    {
+        public abstract void Serialize<T>(T data, string filePath);
+        public abstract T Deserialize<T>(string filePath);
+
+        protected void ValidateFilePath(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+                throw new ArgumentNullException(nameof(filePath));
+
+            string directory = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+        }
+    }
+}

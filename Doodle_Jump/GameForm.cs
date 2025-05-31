@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -32,7 +32,7 @@ namespace Doodle_Jump
         {
             InitializeComponent();
             this.loadSavedGame = loadSavedGame;
-            this.saveFormat = saveFormat; // Сохраняем выбранный формат
+            this.saveFormat = saveFormat;
 
             game_timer = new Timer();
             game_timer.Interval = 16;
@@ -42,7 +42,11 @@ namespace Doodle_Jump
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
 
-            player = new Player(100, 100);
+            player = new Player(150, ClientSize.Height - 20 - Player.Height)
+            {
+                VelocityY = -10f,
+                IsOnGround = false
+            };
             platforms = new List<IPlatform>();
         }
 
@@ -104,12 +108,12 @@ namespace Doodle_Jump
                 }).ToList()
             };
 
-            SaveManager.Save(state, saveFormat); // Передаем формат
+            SaveManager.Save(state, saveFormat);
         }
 
         private void LoadGame()
         {
-            var state = SaveManager.Load(saveFormat); // Используем выбранный формат
+            var state = SaveManager.Load(saveFormat);
             if (state == null)
             {
                 StartNewGame();
@@ -135,7 +139,6 @@ namespace Doodle_Jump
             if (platform is HighJumpPlatform) return PlatformType.HighJump;
             return PlatformType.Normal;
         }
-              
 
         private IPlatform CreatePlatform(PlatformData data)
         {
@@ -148,7 +151,6 @@ namespace Doodle_Jump
                 default:
                     return new NormalPlatform(data.X, data.Y);
             }
-
         }
 
         private void StartNewGame()
@@ -188,8 +190,6 @@ namespace Doodle_Jump
                 lastPlatformX = x;
                 nextPlatformY = currentY - spacing;
             }
-
-
 
             game_timer.Start();
         }
@@ -298,7 +298,7 @@ namespace Doodle_Jump
             isGameOver = true;
             game_timer.Stop();
 
-            SaveGame(); // <--- ОБЯЗАТЕЛЬНО
+            SaveGame();
 
             if (this.IsHandleCreated)
             {
