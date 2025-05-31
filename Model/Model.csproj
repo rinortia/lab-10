@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\BreakablePlatform.cs" />
+    <Compile Include="Core\GameLogic.cs" />
     <Compile Include="Core\HighJumpPlatform.cs" />
     <Compile Include="Core\IPlatform.cs" />
     <Compile Include="Core\NormalPlatform.cs" />
@@ -56,7 +57,11 @@
     <Compile Include="Core\PlatformBase.cs" />
     <Compile Include="Core\Player.cs" />
     <Compile Include="Data\GameState.cs" />
+    <Compile Include="Data\ISerialazer.cs" />
     <Compile Include="Data\SaveManager.cs" />
+    <Compile Include="Data\Serializer.cs" />
+    <Compile Include="Data\SerializerJSON.cs" />
+    <Compile Include="Data\SerializerXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

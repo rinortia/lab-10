@@ -10,3 +10,27 @@ C:\МАРИНА\Doodle_Jump\Model\obj\Debug\Model.dll
 C:\МАРИНА\Doodle_Jump\Model\obj\Debug\Model.pdb
 C:\МАРИНА\Doodle_Jump\Model\bin\Debug\Newtonsoft.Json.dll
 C:\МАРИНА\Doodle_Jump\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\obj\Debug\Model.dll
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\obj\Debug\Model.pdb
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\Model.dll
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\Model.pdb
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\System.Drawing.Common.dll
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\System.Drawing.Common.pdb
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\bin\Debug\System.Drawing.Common.xml
+C:\Users\Арина Котяева\Source\Repos\lab-10_1\Model\obj\Debug\Model.csproj.Up2Date
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\Model.dll
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\Model.pdb
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\System.Drawing.Common.dll
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\System.Drawing.Common.pdb
+C:\Users\admin\Downloads\ээа\Model\bin\Debug\System.Drawing.Common.xml
+C:\Users\admin\Downloads\ээа\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\ээа\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\ээа\Model\obj\Debug\Model.csproj.Up2Date
+C:\Users\admin\Downloads\ээа\Model\obj\Debug\Model.dll
+C:\Users\admin\Downloads\ээа\Model\obj\Debug\Model.pdb

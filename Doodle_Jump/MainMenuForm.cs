@@ -18,41 +18,40 @@ namespace Doodle_Jump
 
         private void InitializeSaveFormatComboBox()
         {
-            // Создаем ComboBox для выбора формата
-            cmbSaveFormat = new ComboBox
-            {
-                Location = new System.Drawing.Point(50, 150),
-                Width = 200,
-                DropDownStyle = ComboBoxStyle.DropDownList
-            };
-
-            // Добавляем только JSON и XML форматы
-            cmbSaveFormat.Items.AddRange(new object[] {
-                "JSON",
-                "XML"
-            });
-
-            // Устанавливаем сохраненный формат или JSON по умолчанию
-            cmbSaveFormat.SelectedIndex = Properties.Settings.Default.LastSaveFormat == "XML" ? 1 : 0;
-
-            // Сохраняем выбор при изменении
-            cmbSaveFormat.SelectedIndexChanged += (s, e) =>
-            {
-                Properties.Settings.Default.LastSaveFormat = cmbSaveFormat.SelectedItem.ToString();
-                Properties.Settings.Default.Save();
-            };
-
-            // Добавляем на форму
-            this.Controls.Add(cmbSaveFormat);
-
             // Подпись для ComboBox
             var lblFormat = new Label
             {
                 Text = "Формат сохранения:",
-                Location = new System.Drawing.Point(50, 130),
-                AutoSize = true
+                Location = new System.Drawing.Point(200, 250),
+                AutoSize = true,
+                Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular)
             };
             this.Controls.Add(lblFormat);
+
+            // Создаем ComboBox для выбора формата
+            cmbSaveFormat = new ComboBox
+            {
+                Location = new System.Drawing.Point(200, 275),
+                Width = 200,
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = new System.Drawing.Font("Segoe UI", 10F)
+            };
+
+            // Добавляем форматы JSON и XML
+            cmbSaveFormat.Items.AddRange(new object[] { "JSON", "XML" });
+
+            // Выбираем последний сохраненный формат, либо JSON по умолчанию
+            cmbSaveFormat.SelectedIndex = Properties.Settings.Default.LastSaveFormat == "XML" ? 1 : 0;
+
+            // Сохраняем выбор и обновляем кнопку при изменении
+            cmbSaveFormat.SelectedIndexChanged += (s, e) =>
+            {
+                Properties.Settings.Default.LastSaveFormat = cmbSaveFormat.SelectedItem.ToString();
+                Properties.Settings.Default.Save();
+                UpdateContinueButton();
+            };
+
+            this.Controls.Add(cmbSaveFormat);
         }
 
         private void UpdateContinueButton()
@@ -62,9 +61,7 @@ namespace Doodle_Jump
                 string format = cmbSaveFormat.SelectedItem?.ToString() ?? "JSON";
                 bool exists = SaveManager.SaveExists(format);
                 btn_continue_game.Enabled = exists;
-                btn_continue_game.Text = exists
-                    ? "Продолжить игру"
-                    : "Нет сохранений";
+                btn_continue_game.Text = exists ? "Продолжить игру" : "Нет сохранений";
             }
             catch
             {
@@ -72,7 +69,6 @@ namespace Doodle_Jump
                 btn_continue_game.Text = "Ошибка загрузки";
             }
         }
-
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {

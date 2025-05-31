@@ -1,0 +1,200 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Data\\SaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Doodle_Jump\\MainMenuForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\GameForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Doodle_Jump\\GameForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Doodle_Jump\\MainMenuForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Doodle_Jump\\MainMenuForm.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\GameState.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Data\\GameState.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SerializerXML.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Data\\SerializerXML.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SerializerJSON.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Data\\SerializerJSON.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Core\\Player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Core\\Player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Core\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Core\\GameLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Model\\Model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainMenuForm.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.cs",
+              "RelativeDocumentMoniker": "Doodle_Jump\\MainMenuForm.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.cs",
+              "RelativeToolTip": "Doodle_Jump\\MainMenuForm.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T07:50:30.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameForm.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\GameForm.cs",
+              "RelativeDocumentMoniker": "Doodle_Jump\\GameForm.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\GameForm.cs",
+              "RelativeToolTip": "Doodle_Jump\\GameForm.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAswDABAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T07:38:54.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Model\\Data\\SaveManager.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SaveManager.cs",
+              "RelativeToolTip": "Model\\Data\\SaveManager.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T07:54:55.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainMenuForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.Designer.cs",
+              "RelativeDocumentMoniker": "Doodle_Jump\\MainMenuForm.Designer.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.Designer.cs",
+              "RelativeToolTip": "Doodle_Jump\\MainMenuForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T08:04:38.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainMenuForm.resx",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.resx",
+              "RelativeDocumentMoniker": "Doodle_Jump\\MainMenuForm.resx",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Doodle_Jump\\MainMenuForm.resx",
+              "RelativeToolTip": "Doodle_Jump\\MainMenuForm.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-05-31T08:04:37.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SerializerXML.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SerializerXML.cs",
+              "RelativeDocumentMoniker": "Model\\Data\\SerializerXML.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SerializerXML.cs",
+              "RelativeToolTip": "Model\\Data\\SerializerXML.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T08:03:07.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\GameState.cs",
+              "RelativeDocumentMoniker": "Model\\Data\\GameState.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\GameState.cs",
+              "RelativeToolTip": "Model\\Data\\GameState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T07:56:50.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SerializerJSON.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SerializerJSON.cs",
+              "RelativeDocumentMoniker": "Model\\Data\\SerializerJSON.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Data\\SerializerJSON.cs",
+              "RelativeToolTip": "Model\\Data\\SerializerJSON.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T08:03:00.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Core\\Player.cs",
+              "RelativeDocumentMoniker": "Model\\Core\\Player.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Core\\Player.cs",
+              "RelativeToolTip": "Model\\Core\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T07:40:42.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GameLogic.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Core\\GameLogic.cs",
+              "RelativeDocumentMoniker": "Model\\Core\\GameLogic.cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Core\\GameLogic.cs",
+              "RelativeToolTip": "Model\\Core\\GameLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T07:45:06.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Model.csproj",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Model.csproj",
+              "RelativeDocumentMoniker": "Model\\Model.csproj",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\\u044D\u044D\u0430\\Model\\Model.csproj",
+              "RelativeToolTip": "Model\\Model.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-31T07:42:21.051Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
