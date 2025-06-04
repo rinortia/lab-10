@@ -38,6 +38,35 @@ namespace Model.Core
             VelocityY = 0;
             VelocityX = 0;
         }
+                
+        public static bool operator ==(Player left, Player right)
+        {
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if (left is null || right is null)
+                return false;
+
+            return left.Position == right.Position;
+        }
+        
+        public static bool operator !=(Player left, Player right)
+        {
+            return !(left == right);
+        }        
+                
+        public override bool Equals(object obj)
+        {
+            if (obj is Player other)
+                return this == other;
+
+            return false;
+        }
+        
+        public override int GetHashCode()
+        {
+            return Position.GetHashCode();
+        }
 
         private static void LoadPlayerImage()
         {
@@ -51,10 +80,10 @@ namespace Model.Core
             }
             catch
             {
-                // Игнорируем ошибки загрузки изображения
+                
             }
         }
-
+        
         public void Update()
         {
             ApplyGravity();
