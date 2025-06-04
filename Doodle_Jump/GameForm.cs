@@ -13,7 +13,8 @@ namespace Doodle_Jump
         private readonly bool _loadSavedGame;
         private readonly string _saveFormat;
         private readonly string _saveFolder;
-        
+        private Func<int, string> _scoreDisplayFormatter;
+
 
         public GameForm(bool loadSavedGame, string saveFormat = "JSON")
         {
@@ -21,7 +22,8 @@ namespace Doodle_Jump
             _loadSavedGame = loadSavedGame;
             _saveFormat = saveFormat;
             _saveFolder = Properties.Settings.Default.SaveFolder;
-                       
+            _scoreDisplayFormatter = score => $"Score: {score}";
+
 
             InitializeGameTimer();
             InitializeFormSettings();
@@ -45,11 +47,10 @@ namespace Doodle_Jump
         private void InitializeGameWorld()
         {
             var player = new Player(150, ClientSize.Height - 20 - Player.Height)
-            {                
+            {
+                VelocityY = -10f,
+                IsOnGround = false
             };
-                        
-            player.SetVelocityY(-10f);
-            player.SetIsOnGround(false);
 
             _gameWorld = new GameWorld(player);
             _gameWorld.GameOver += OnGameOver;
@@ -103,7 +104,13 @@ namespace Doodle_Jump
                 platform.Draw(g);
 
             _gameWorld.Player.Draw(g);
-            g.DrawString($"Score: {_gameWorld.Score}", Font, Brushes.Black, 10, 10);
+            g.DrawString(_scoreDisplayFormatter(_gameWorld.Score),
+                    Font, Brushes.Black, 10, 10);
+        }
+
+        public void SetScoreFormatter(Func<int, string> formatter)
+        {
+            _scoreDisplayFormatter = formatter;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
