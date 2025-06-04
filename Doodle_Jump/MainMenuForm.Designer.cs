@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,6 +21,8 @@ namespace Doodle_Jump
             base.Dispose(disposing);
         }
 
+        private Label lbl_title;
+
         private void InitializeComponent()
         {
             this.btn_new_game = new Button();
@@ -35,6 +37,15 @@ namespace Doodle_Jump
             catch
             {
             }
+
+            this.lbl_title = new Label();
+            this.lbl_title.Text = "DOODLE JUMP";
+            this.lbl_title.Font = new Font("Comic Sans MS", 24F, FontStyle.Bold);
+            this.lbl_title.ForeColor = Color.Orange;
+            this.lbl_title.BackColor = Color.Transparent;
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Location = new Point(150, 80);
+            this.Controls.Add(this.lbl_title);
 
             this.AutoScaleDimensions = new SizeF(8F, 16F);
             this.AutoScaleMode = AutoScaleMode.Font;
