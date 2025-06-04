@@ -6,9 +6,9 @@ namespace Model.Core
 {
     public class Player
     {
-        private const float Gravity = 0.3f;
-        private const float MaxFallSpeed = 15f;
-        private const float MoveSpeed = 3f;
+        public float Gravity { get; private set; } = 0.3f;
+        public float MaxFallSpeed { get; private set; } = 15f;
+        public float MoveSpeed { get; private set; } = 3f;
         private const float AirResistance = 0.5f;
         private const float GroundFriction = 0.6f;
         private const float FallAcceleration = 0.05f;
@@ -18,10 +18,14 @@ namespace Model.Core
 
         private static Image _playerImage;
 
-        public PointF Position { get; set; }
-        public bool IsOnGround { get; set; }
-        public float VelocityY { get; set; }
-        public float VelocityX { get; set; }
+        public PointF Position { get; private set; }
+        public bool IsOnGround { get; private set; }
+        public float VelocityY { get; private set; }
+        public float VelocityX { get; private set; }
+        public void SetPosition(PointF newPosition) => Position = newPosition;
+        public void SetIsOnGround(bool value) => IsOnGround = value;
+        public void SetVelocityY(float value) => VelocityY = value;
+        public void SetVelocityX(float value) => VelocityX = value;
 
         static Player()
         {

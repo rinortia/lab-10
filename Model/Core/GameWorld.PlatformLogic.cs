@@ -1,6 +1,4 @@
-﻿using Model.Core;
-using Model.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -13,19 +11,19 @@ namespace Model.Core
         {
             if (player.Position.X < -Player.Width)
             {
-                player.Position = new PointF(worldSize.Width, player.Position.Y);
+                player.SetPosition(new PointF(worldSize.Width, player.Position.Y)); // Используем метод
             }
             else if (player.Position.X > worldSize.Width)
             {
-                player.Position = new PointF(-Player.Width, player.Position.Y);
+                player.SetPosition(new PointF(-Player.Width, player.Position.Y)); // Используем метод
             }
         }
 
-        private void AddRandomPlatform(int worldWidth)
+        private void AddRandomPlatform(int worldSizeWidth)
         {
             const int margin = 20;
-            const int platformWidth = 60; 
-            float x = rnd.Next(margin, worldWidth - margin - platformWidth);
+            const int platformWidth = 60;
+            float x = rnd.Next(margin, worldSizeWidth - margin - platformWidth);
 
             float spacing;
             do
@@ -46,7 +44,7 @@ namespace Model.Core
         {
             if (isGameOver) return;
 
-            player.IsOnGround = false;
+            player.SetIsOnGround(false); // Используем метод
             player.Update();
 
             HandleScreenWrapping(worldSize);
@@ -83,7 +81,7 @@ namespace Model.Core
 
         private void ScrollWorld(float dy, Size worldSize)
         {
-            player.Position = new PointF(player.Position.X, ScrollTriggerY);
+            player.SetPosition(new PointF(player.Position.X, ScrollTriggerY)); // Используем метод
 
             foreach (var p in platforms)
             {
@@ -106,9 +104,9 @@ namespace Model.Core
 
             if (verticalHit && horizontalOverlap)
             {
-                player.IsOnGround = true;
-                player.VelocityY = 0;
-                player.Position = new PointF(player.Position.X, pl.Top - Player.Height);
+                player.SetIsOnGround(true); // Используем метод
+                player.SetVelocityY(0); // Используем метод
+                player.SetPosition(new PointF(player.Position.X, pl.Top - Player.Height)); // Используем метод
 
                 if (p is HighJumpPlatform highJumpPlatform)
                     highJumpPlatform.IsActive = true;

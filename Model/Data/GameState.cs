@@ -29,6 +29,6 @@ namespace Model.Data
         Normal,
         Breakable,
         HighJump,
-        Moving
+        Fragile // Добавлен новый тип для FragilePlatform
     }
 }

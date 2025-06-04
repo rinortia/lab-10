@@ -127,3 +127,41 @@ C:\Users\admin\Downloads\clean code\Doodle_Jump\bin\Debug\Newtonsoft.Json.dll
 C:\Users\admin\Downloads\clean code\Doodle_Jump\bin\Debug\Model.pdb
 C:\Users\admin\Downloads\clean code\Doodle_Jump\bin\Debug\Newtonsoft.Json.xml
 C:\Users\admin\Downloads\clean code\Doodle_Jump\obj\Debug\Doodle_J.0A7096BA.Up2Date
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Resources\background1.png
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Resources\kitten.png
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Doodle_Jump.exe.config
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Doodle_Jump.exe
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Model.dll
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.exe.config
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.GameForm.resources
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.MainMenuForm.resources
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.Properties.Resources.resources
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.GenerateResource.cache
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_J.0A7096BA.Up2Date
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.exe
+C:\Users\admin\Downloads\clean code wm\Doodle_Jump\obj\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.exe.config
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.GameForm.resources
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.MainMenuForm.resources
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.Properties.Resources.resources
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.GenerateResource.cache
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.exe
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Resources\background1.png
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Resources\kitten.png
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Doodle_Jump.exe.config
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Doodle_Jump.exe
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Doodle_Jump.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Model.dll
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\clean code wm new platform\Doodle_Jump\obj\Debug\Doodle_J.0A7096BA.Up2Date

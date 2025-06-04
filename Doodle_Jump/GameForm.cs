@@ -45,10 +45,11 @@ namespace Doodle_Jump
         private void InitializeGameWorld()
         {
             var player = new Player(150, ClientSize.Height - 20 - Player.Height)
-            {
-                VelocityY = -10f,
-                IsOnGround = false
+            {                
             };
+                        
+            player.SetVelocityY(-10f);
+            player.SetIsOnGround(false);
 
             _gameWorld = new GameWorld(player);
             _gameWorld.GameOver += OnGameOver;

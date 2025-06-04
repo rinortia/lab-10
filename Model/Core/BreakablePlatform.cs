@@ -7,10 +7,10 @@ namespace Model.Core
     public class BreakablePlatform : PlatformBase
     {
         private bool _used = false;
-
         public bool IsActive { get; set; } = true;
 
-        public BreakablePlatform(float x, float y) : base(x, y) { }
+        public BreakablePlatform(float x, float y)
+            : base(new PointF(x, y), new SizeF(60, 15)) { }
 
         protected override Brush PlatformBrush => Brushes.IndianRed;
 
@@ -21,7 +21,7 @@ namespace Model.Core
                 _used = true;
                 IsActive = false;
                 player.Jump();
-                return false;
+                return false; // Platform breaks and should be removed
             }
             return false;
         }

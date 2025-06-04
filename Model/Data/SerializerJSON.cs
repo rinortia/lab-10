@@ -13,7 +13,12 @@ namespace Model.Data
         public override void Serialize<T>(T data, string filePath)
         {
             ValidateFilePath(filePath);
-            string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            var settings = new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Auto, // Позволяет сериализовать производные классы
+                Formatting = Formatting.Indented
+            };
+            string json = JsonConvert.SerializeObject(data, settings);
             File.WriteAllText(filePath, json);
         }
 
@@ -22,8 +27,12 @@ namespace Model.Data
             if (!File.Exists(filePath))
                 throw new FileNotFoundException("Файл не найден", filePath);
 
+            var settings = new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.Auto // Необходимо для десериализации производных классов
+            };
             string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<T>(json);
+            return JsonConvert.DeserializeObject<T>(json, settings);
         }
     }
 }

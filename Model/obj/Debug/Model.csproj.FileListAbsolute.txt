@@ -82,3 +82,27 @@ C:\Users\admin\Downloads\clean code\Model\obj\Debug\Model.csproj.CoreCompileInpu
 C:\Users\admin\Downloads\clean code\Model\obj\Debug\Model.csproj.Up2Date
 C:\Users\admin\Downloads\clean code\Model\obj\Debug\Model.dll
 C:\Users\admin\Downloads\clean code\Model\obj\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\clean code wm\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\clean code wm\Model\obj\Debug\Model.dll
+C:\Users\admin\Downloads\clean code wm\Model\obj\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\Model.dll
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\System.Drawing.Common.dll
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\System.Drawing.Common.pdb
+C:\Users\admin\Downloads\clean code wm\Model\bin\Debug\System.Drawing.Common.xml
+C:\Users\admin\Downloads\clean code wm\Model\obj\Debug\Model.csproj.Up2Date
+C:\Users\admin\Downloads\clean code wm new platform\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\admin\Downloads\clean code wm new platform\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\clean code wm new platform\Model\obj\Debug\Model.dll
+C:\Users\admin\Downloads\clean code wm new platform\Model\obj\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\Model.dll
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\Model.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\System.Drawing.Common.dll
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\System.Drawing.Common.pdb
+C:\Users\admin\Downloads\clean code wm new platform\Model\bin\Debug\System.Drawing.Common.xml
+C:\Users\admin\Downloads\clean code wm new platform\Model\obj\Debug\Model.csproj.Up2Date

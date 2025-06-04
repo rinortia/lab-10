@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.Core
 {
     public class NormalPlatform : PlatformBase
     {
-        public NormalPlatform(float x, float y) : base(x, y) { }
+        public NormalPlatform(float x, float y)
+            : base(new PointF(x, y), new SizeF(60, 15)) { }
 
         protected override Brush PlatformBrush => Brushes.SkyBlue;
     }

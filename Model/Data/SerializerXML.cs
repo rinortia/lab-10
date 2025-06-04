@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model.Core;
+using Model.Data;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,7 +15,13 @@ namespace Model.Data
         public override void Serialize<T>(T data, string filePath)
         {
             ValidateFilePath(filePath);
-            var serializer = new XmlSerializer(typeof(T));
+            var serializer = new XmlSerializer(typeof(T), new Type[]
+            {
+                typeof(NormalPlatform),
+                typeof(BreakablePlatform),
+                typeof(HighJumpPlatform),
+                typeof(FragilePlatform) // Добавлен новый тип
+            });
             using (var writer = new StreamWriter(filePath))
             {
                 serializer.Serialize(writer, data);
@@ -25,7 +33,13 @@ namespace Model.Data
             if (!File.Exists(filePath))
                 throw new FileNotFoundException("Файл не найден", filePath);
 
-            var serializer = new XmlSerializer(typeof(T));
+            var serializer = new XmlSerializer(typeof(T), new Type[]
+            {
+                typeof(NormalPlatform),
+                typeof(BreakablePlatform),
+                typeof(HighJumpPlatform),
+                typeof(FragilePlatform) // Добавлен новый тип
+            });
             using (var reader = new StreamReader(filePath))
             {
                 return (T)serializer.Deserialize(reader);

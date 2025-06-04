@@ -19,7 +19,7 @@ namespace Model.Core
         private readonly float maxPlatformSpacing = 100f;
         private readonly int minVisiblePlatforms = 13;
         private readonly float maxJumpHeight = 230f;
-        private readonly float ScrollTriggerY = 250f; 
+        private readonly float ScrollTriggerY = 250f;
         private int score;
         private bool isGameOver = false;
 
@@ -33,7 +33,7 @@ namespace Model.Core
 
         public GameWorld(Player player)
         {
-            this.player = player;
+            this.player = player ?? throw new ArgumentNullException(nameof(player));
             platforms = new List<IPlatform>();
         }
 
@@ -50,11 +50,9 @@ namespace Model.Core
             platforms.Add(new NormalPlatform(150, startPlatformY));
             platformsCreated++;
 
-            player = new Player(150, startPlatformY - Player.Height)
-            {
-                VelocityY = -10f,
-                IsOnGround = false
-            };
+            player = new Player(150, startPlatformY - Player.Height);
+            player.SetVelocityY(-10f); // Используем метод
+            player.SetIsOnGround(false); // Используем метод
 
             float currentY = startPlatformY;
 
@@ -88,12 +86,10 @@ namespace Model.Core
                     return;
                 }
 
-                player = new Player(state.PlayerPosition.X, state.PlayerPosition.Y)
-                {
-                    VelocityY = state.IsPlayerOnGround ? 0f : Math.Max(-10f, Math.Min(10f, state.PlayerVelocityY)),
-                    VelocityX = 0f,
-                    IsOnGround = state.IsPlayerOnGround
-                };
+                player = new Player(state.PlayerPosition.X, state.PlayerPosition.Y);
+                player.SetVelocityY(state.IsPlayerOnGround ? 0f : Math.Max(-10f, Math.Min(10f, state.PlayerVelocityY))); // Используем метод
+                player.SetVelocityX(0f); // Используем метод
+                player.SetIsOnGround(state.IsPlayerOnGround); // Используем метод
 
                 platforms = state.Platforms
                     .Where(p => p != null && p.Y >= -50 && p.Y <= worldSize.Height + 50)
@@ -112,21 +108,21 @@ namespace Model.Core
                 lastPlatformX = platforms.Last().Position.X;
 
                 var nearestPlatform = platforms.OrderBy(p => Math.Abs(p.Position.Y - player.Position.Y)).First();
-                player.Position = new PointF(
+                player.SetPosition(new PointF( // Используем метод
                     Math.Max(0, Math.Min(worldSize.Width - Player.Width, nearestPlatform.Position.X)),
                     nearestPlatform.Position.Y - Player.Height
-                );
-                player.IsOnGround = true;
-                player.VelocityY = 0f;
+                ));
+                player.SetIsOnGround(true); // Используем метод
+                player.SetVelocityY(0f); // Используем метод
 
                 isGameOver = false;
 
-                Console.WriteLine($"Loaded: Player Y={player.Position.Y}, VelocityY={player.VelocityY}, Platforms={platforms.Count}");
+                System.Diagnostics.Debug.WriteLine($"Loaded: Player Y={player.Position.Y}, VelocityY={player.VelocityY}, Platforms={platforms.Count}");
             }
             catch (Exception ex)
             {
                 StartNewGame(worldSize);
-                Console.WriteLine($"Ошибка загрузки: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки: {ex.Message}");
             }
         }
 
@@ -154,7 +150,7 @@ namespace Model.Core
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка сохранения: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка сохранения: {ex.Message}");
             }
         }
 
@@ -162,6 +158,7 @@ namespace Model.Core
         {
             if (platform is BreakablePlatform) return PlatformType.Breakable;
             if (platform is HighJumpPlatform) return PlatformType.HighJump;
+            if (platform is FragilePlatform) return PlatformType.Fragile;
             return PlatformType.Normal;
         }
 
@@ -173,12 +170,14 @@ namespace Model.Core
                     return new BreakablePlatform(data.X, data.Y) { IsActive = data.IsActive };
                 case PlatformType.HighJump:
                     return new HighJumpPlatform(data.X, data.Y);
+                case PlatformType.Fragile:
+                    return new FragilePlatform(data.X, data.Y);
                 default:
                     return new NormalPlatform(data.X, data.Y);
             }
         }
 
-        private IPlatform CreateNewPlatform(float x, float y) 
+        private IPlatform CreateNewPlatform(float x, float y)
         {
             if (platformsCreated < 6)
                 return new NormalPlatform(x, y);
@@ -189,6 +188,8 @@ namespace Model.Core
                 return new BreakablePlatform(x, y);
             if (chance < 0.35)
                 return new HighJumpPlatform(x, y);
+            if (chance < 0.45)
+                return new FragilePlatform(x, y);
 
             return new NormalPlatform(x, y);
         }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model.Core
 {
@@ -12,9 +8,10 @@ namespace Model.Core
         public PointF Position { get; set; }
         public SizeF Size { get; protected set; } = new SizeF(60, 15);
 
-        protected PlatformBase(float x, float y)
+        protected PlatformBase(PointF position, SizeF size)
         {
-            Position = new PointF(x, y);
+            Position = position;
+            Size = size;
         }
 
         protected abstract Brush PlatformBrush { get; }
@@ -22,7 +19,7 @@ namespace Model.Core
         public virtual bool OnLand(Player player)
         {
             player.Jump();
-            return true;                
+            return true;
         }
 
         public virtual void Draw(Graphics g)
