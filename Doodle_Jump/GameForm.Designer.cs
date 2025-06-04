@@ -40,10 +40,12 @@
             // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 553);
+            this.BackgroundImage = global::Doodle_Jump.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(286, 449);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GameForm";
             this.Text = "Doodle Jump";
             this.Load += new System.EventHandler(this.GameForm_Load);

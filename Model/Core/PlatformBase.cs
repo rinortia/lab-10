@@ -17,14 +17,12 @@ namespace Model.Core
             Position = new PointF(x, y);
         }
 
-        // тип кисти определит наследник
         protected abstract Brush PlatformBrush { get; }
 
         public virtual bool OnLand(Player player)
         {
-            // типовая реакция: подпрыгнуть игрока
             player.Jump();
-            return true;                 // по умолчанию платформа остаётся
+            return true;                
         }
 
         public virtual void Draw(Graphics g)

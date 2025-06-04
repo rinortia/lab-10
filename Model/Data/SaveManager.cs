@@ -6,60 +6,147 @@ using Model.Data;
 
 public static class SaveManager
 {
-    public static void Save(GameState state, string format)
+    public static bool Save(GameState state, string format, string saveFolder = null)
     {
-        string path = GetSavePath(format);
+        string path = GetSavePath(format, saveFolder);
+        string folder = Path.GetDirectoryName(path);
 
-        if (format == "JSON")
+        if (!IsFolderWritable(folder))
         {
-            string json = JsonConvert.SerializeObject(state, Formatting.Indented);
-            File.WriteAllText(path, json);
+            return false;
         }
-        else if (format == "XML")
+
+        try
         {
-            var serializer = new XmlSerializer(typeof(GameState));
-            using (var stream = new FileStream(path, FileMode.Create))
+            if (format == "JSON")
             {
-                serializer.Serialize(stream, state);
+                string json = JsonConvert.SerializeObject(state, Formatting.Indented);
+                File.WriteAllText(path, json);
+                return true;
+            }
+            else if (format == "XML")
+            {
+                var serializer = new XmlSerializer(typeof(GameState));
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    serializer.Serialize(stream, state);
+                }
+                return true;
             }
         }
-        else
+        catch
         {
-            throw new NotSupportedException($"Формат {format} не поддерживается.");
+            return false;
         }
+
+        return false;
     }
 
-    public static GameState Load(string format)
+    public static GameState Load(string format, string saveFolder = null)
     {
-        string path = GetSavePath(format);
+        string path = GetSavePath(format, saveFolder);
         if (!File.Exists(path)) return null;
 
-        if (format == "JSON")
+        try
         {
-            string json = File.ReadAllText(path);
-            return JsonConvert.DeserializeObject<GameState>(json);
-        }
-        else if (format == "XML")
-        {
-            var serializer = new XmlSerializer(typeof(GameState));
-            using (var stream = new FileStream(path, FileMode.Open))
+            GameState state;
+            if (format == "JSON")
             {
-                return (GameState)serializer.Deserialize(stream);
+                string json = File.ReadAllText(path);
+                state = JsonConvert.DeserializeObject<GameState>(json);
+            }
+            else if (format == "XML")
+            {
+                var serializer = new XmlSerializer(typeof(GameState));
+                using (var stream = new FileStream(path, FileMode.Open))
+                {
+                    state = (GameState)serializer.Deserialize(stream);
+                }
+            }
+            else
+            {
+                return null;
+            }
+
+            if (state?.Platforms?.Count > 0)
+            {
+                return state;
             }
         }
+        catch
+        {
+            return null;
+        }
 
-        throw new NotSupportedException($"Формат {format} не поддерживается.");
+        return null;
     }
 
-    private static string GetSavePath(string format)
+    public static bool SaveExists(string format, string saveFolder = null)
     {
-        string fileName = format == "JSON" ? "savegame.json" : "savegame.xml";
-        return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
-    }
-
-    public static bool SaveExists(string format)
-    {
-        string path = GetSavePath(format);
+        string path = GetSavePath(format, saveFolder);
         return File.Exists(path);
+    }
+
+    public static bool IsValidSaveFile(string format, string saveFolder = null)
+    {
+        string path = GetSavePath(format, saveFolder);
+        if (!File.Exists(path)) return false;
+
+        try
+        {
+            if (format == "JSON")
+            {
+                string json = File.ReadAllText(path);
+                return JsonConvert.DeserializeObject<GameState>(json) != null;
+            }
+            else if (format == "XML")
+            {
+                var serializer = new XmlSerializer(typeof(GameState));
+                using (var stream = new FileStream(path, FileMode.Open))
+                {
+                    return serializer.Deserialize(stream) != null;
+                }
+            }
+        }
+        catch
+        {
+            return false;
+        }
+
+        return false;
+    }
+
+    private static bool IsFolderWritable(string folderPath)
+    {
+        try
+        {
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            string testFile = Path.Combine(folderPath, "test.tmp");
+            File.WriteAllText(testFile, "test");
+            File.Delete(testFile);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public static string GetSavePath(string format, string saveFolder = null)
+    {
+        string folder = saveFolder ?? Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "DoodleJump",
+            "Saves");
+
+        if (!Directory.Exists(folder))
+        {
+            Directory.CreateDirectory(folder);
+        }
+
+        string fileName = $"savegame.{format.ToLower()}";
+        return Path.Combine(folder, fileName);
     }
 }

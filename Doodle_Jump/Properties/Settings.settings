@@ -5,5 +5,8 @@
     <Setting Name="LastSaveFormat" Type="System.String" Scope="User">
       <Value Profile="(Default)">JSON</Value>
     </Setting>
+    <Setting Name="SaveFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -49,7 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\BreakablePlatform.cs" />
-    <Compile Include="Core\GameLogic.cs" />
+    <Compile Include="Core\GameWorld.cs" />
+    <Compile Include="Core\GameWorld.PlatformLogic.cs" />
     <Compile Include="Core\HighJumpPlatform.cs" />
     <Compile Include="Core\IPlatform.cs" />
     <Compile Include="Core\NormalPlatform.cs" />

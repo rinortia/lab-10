@@ -6,27 +6,26 @@ namespace Model.Core
 {
     public class Player
     {
-        public PointF Position { get; set; }
-        public bool IsOnGround { get; set; }
-        public float VelocityY { get; set; }
-        public float VelocityX { get; set; } // Новая переменная для горизонтальной скорости
-
-        public const float Gravity = 0.5f;
-        private const float MaxFallSpeed = 12f;
-        private const float MoveSpeed = 5f;
-        private const float AirResistance = 0.8f; // Сопротивление воздуха в прыжке
-        private const float GroundFriction = 0.9f; // Трение о землю
-        private const float Acceleration = 0.8f; // Ускорение при движении
-
-        public const float InitialJumpForce = 14f;
+        private const float Gravity = 0.3f;
+        private const float MaxFallSpeed = 15f;
+        private const float MoveSpeed = 3f;
+        private const float AirResistance = 0.5f;
+        private const float GroundFriction = 0.6f;
+        private const float FallAcceleration = 0.05f;
+        public const float InitialJumpForce = 10f;
         public const int Width = 70;
         public const int Height = 70;
 
-        private static Image playerImage;
+        private static Image _playerImage;
+
+        public PointF Position { get; set; }
+        public bool IsOnGround { get; set; }
+        public float VelocityY { get; set; }
+        public float VelocityX { get; set; }
 
         static Player()
         {
-            LoadImage();
+            LoadPlayerImage();
         }
 
         public Player(float x, float y)
@@ -36,95 +35,90 @@ namespace Model.Core
             VelocityX = 0;
         }
 
-        private static void LoadImage()
+        private static void LoadPlayerImage()
         {
             try
             {
-                string resourcesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
-                string path = Path.Combine(resourcesPath, "kitten.png");
-
-                if (!File.Exists(path))
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "kitten.png");
+                if (File.Exists(imagePath))
                 {
-                    Console.WriteLine($"[Player] Изображение не найдено: {path}");
-                    return;
+                    _playerImage = Image.FromFile(imagePath);
                 }
-
-                playerImage = Image.FromFile(path);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"[Player] Ошибка загрузки изображения: {ex.Message}");
+                // Игнорируем ошибки загрузки изображения
             }
         }
 
         public void Update()
         {
-            // Вертикальное движение с улучшенной физикой
+            ApplyGravity();
+            ApplyMovement();
+            LimitFallSpeed();
+        }
+
+        private void ApplyGravity()
+        {
             if (!IsOnGround)
             {
                 VelocityY += Gravity;
-
-                // Дополнительное ускорение при падении
                 if (VelocityY > 0)
-                    VelocityY *= 1.05f;
+                {
+                    VelocityY += FallAcceleration;
+                }
             }
             else
             {
-                // Трение о землю
                 VelocityX *= GroundFriction;
             }
+        }
 
-            // Ограничиваем скорость падения
-            if (VelocityY > MaxFallSpeed)
-                VelocityY = MaxFallSpeed;
-
-            // Обновляем позицию
+        private void ApplyMovement()
+        {
             Position = new PointF(Position.X + VelocityX, Position.Y + VelocityY);
+        }
+
+        private void LimitFallSpeed()
+        {
+            VelocityY = Math.Min(VelocityY, MaxFallSpeed);
+        }
+
+        public void Jump()
+        {
+            if (IsOnGround)
+            {
+                ApplyJumpForce(InitialJumpForce);
+            }
         }
 
         public void ApplyJumpForce(float force)
         {
             VelocityY = -force;
             IsOnGround = false;
-
-            // Сопротивление воздуха при прыжке
             VelocityX *= AirResistance;
-        }
-
-        public void Jump()
-        {
-            if (IsOnGround)
-                ApplyJumpForce(InitialJumpForce);
         }
 
         public void MoveLeft()
         {
-            if (IsOnGround)
-                VelocityX = -MoveSpeed;
-            else
-                VelocityX = -MoveSpeed * 0.7f; // Меньший контроль в воздухе
-
-            // Плавное ускорение
-            VelocityX = Math.Max(VelocityX - Acceleration, -MoveSpeed * 1.5f);
+            VelocityX = IsOnGround ? -MoveSpeed : -MoveSpeed * 0.7f;
         }
 
         public void MoveRight()
         {
-            if (IsOnGround)
-                VelocityX = MoveSpeed;
-            else
-                VelocityX = MoveSpeed * 0.7f; // Меньший контроль в воздухе
-
-            // Плавное ускорение
-            VelocityX = Math.Min(VelocityX + Acceleration, MoveSpeed * 1.5f);
+            VelocityX = IsOnGround ? MoveSpeed : MoveSpeed * 0.7f;
         }
 
         public void Draw(Graphics g)
         {
-            if (playerImage != null)
-                g.DrawImage(playerImage, Position.X, Position.Y, Width, Height);
+            if (_playerImage != null)
+            {
+                g.DrawImage(_playerImage, Position.X, Position.Y, Width, Height);
+            }
             else
+            {
                 g.FillEllipse(Brushes.Green, Position.X, Position.Y, Width, Height);
+            }
         }
 
         public RectangleF GetBounds()
@@ -132,25 +126,30 @@ namespace Model.Core
             return new RectangleF(Position.X, Position.Y, Width, Height);
         }
 
-        public bool CheckPlatformCollision(HighJumpPlatform platform)
+        public bool CheckPlatformCollision(PlatformBase platform)
         {
-            RectangleF playerBounds = GetBounds();
-            RectangleF platformBounds = new RectangleF(platform.Position, platform.Size);
+            var playerBounds = GetBounds();
+            var platformBounds = new RectangleF(platform.Position, platform.Size);
 
-            bool vertical = playerBounds.Bottom >= platformBounds.Top &&
-                          playerBounds.Bottom <= platformBounds.Top + 10;
+            bool isVerticalCollision = playerBounds.Bottom >= platformBounds.Top &&
+                                     playerBounds.Bottom <= platformBounds.Top + 10;
 
-            bool horizontal = playerBounds.Right > platformBounds.Left &&
-                            playerBounds.Left < platformBounds.Right;
+            bool isHorizontalCollision = playerBounds.Right > platformBounds.Left &&
+                                        playerBounds.Left < platformBounds.Right;
 
-            if (vertical && horizontal)
+            if (isVerticalCollision && isHorizontalCollision)
             {
-                IsOnGround = true;
-                Position = new PointF(Position.X, platformBounds.Top - Height);
+                HandlePlatformCollision(platformBounds.Top);
                 return true;
             }
 
             return false;
+        }
+
+        private void HandlePlatformCollision(float platformTop)
+        {
+            IsOnGround = true;
+            Position = new PointF(Position.X, platformTop - Height);
         }
     }
 }

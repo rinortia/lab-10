@@ -12,12 +12,10 @@ namespace Model.Core
         PointF Position { get; set; }
         SizeF Size { get; }
 
-        /// Вызывается, когда игрок «приземлился» на платформу.
-        /// Должна вернуть true, если платформа ещё существует
-        /// (false — значит разрушилась и её надо удалить).
+       
         bool OnLand(Player player);
 
-        /// Отрисовать себя
+
         void Draw(Graphics g);
     }
 }

@@ -3,10 +3,11 @@
     "",
     "\\Doodle_Jump",
     "\\Doodle_Jump\\Properties",
+    "\\Doodle_Jump\\Resources",
     "\\Model",
     "\\Model\\Core",
     "\\Model\\Data"
   ],
-  "SelectedNode": "\\Model\\Data\\SaveManager.cs",
+  "SelectedNode": "\\Doodle_Jump\\GameForm.cs",
   "PreviewInSolutionExplorer": false
 }
